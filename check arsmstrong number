@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <math.h>
+#include <ctype.h>
+int main(){
+    int a;
+    int cnt;
+    float check=0;
+    int dup,itrv,final,ch;
+    char ch1;
+
+  do{
+    printf("for eg:153, 370, 371, 407, 1634, 8208, 9474,54748, 92727, 93084,548834\n");
+    cnt=0; 
+    printf("ENTER THE NUM:");
+    scanf("%d",&a);
+    dup=a;
+    final=a;
+    while(a!=0){
+        a=a/10;
+        cnt++;
+    }
+    printf("count valuse is :%d\n",cnt);
+    
+    while(dup!=0){
+    
+        itrv=dup%10;
+        check+=pow(itrv,cnt);
+        
+        dup=dup/10;
+        
+    }
+    if(check==final){
+        printf("correct\n");
+    }
+    else{
+        printf("POI UMBU\n");
+    }
+    check=0;
+    printf("ENTER DO YOU WANT TO CONT y or n:");
+    scanf(" %c",&ch1);
+    ch1=toupper(ch1);
+   }while(ch1=='Y');
+
+
+
+
+}
